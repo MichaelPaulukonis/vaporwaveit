@@ -8,15 +8,22 @@
     <body>
         <h1>Vaporwave It</h1>
 
-        <input id="file" type="file"><br>
+        Choose your image : <input id="file" type="file"><br>
         <canvas id="myCanvas" width="800" height="600"></canvas>
+        <button id="blackAndWhite">Black'n'White It</button>
+
+        <script src="../js/loadFile.js"></script>
+        <script src="../js/blackAndWhiteIt.js"></script>
 
         <script>
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
+            var img = loadFile();
+
+            var blackAndWhite = document.getElementById("blackAndWhite");
+            blackAndWhite.onclick = function () { blackAndWhiteIt(c, ctx); };
         </script>
 
-        <!-- Img Loading Script -->
-        <script src="../js/loadFile.js"></script>
+
     </body>
 </html>
