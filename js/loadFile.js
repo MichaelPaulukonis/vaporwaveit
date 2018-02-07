@@ -2,10 +2,10 @@
 
 function loadFile () {
     // Instantiate and draw img
-    var img = new Image();
-    img.onload = function () {
+    var imgLoaded = new Image();
+    imgLoaded.onload = function () {
         ctx.clearRect(0, 0, c.width, c.height);
-        ctx.drawImage(img, 0, 0);
+        ctx.drawImage(imgLoaded, 0, 0);
     };
 //img.src = "../resources/exemple.jpg";
 
@@ -14,12 +14,14 @@ function loadFile () {
     var reader = new FileReader();
 
     reader.onloadend = function () {
-        img.src = reader.result;
+        imgLoaded.src = reader.result;
     };
 
     file.onchange = function () {
         reader.readAsDataURL(file.files[0]);
     };
 
-    return img;
+    return imgLoaded;
 }
+
+// https://stackoverflow.com/questions/1445862/possible-to-use-html-images-like-canvas-with-getimagedata-putimagedata
