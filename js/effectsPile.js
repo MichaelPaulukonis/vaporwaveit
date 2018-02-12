@@ -23,7 +23,7 @@ function addRandomEffect(opacity)
 function resetCanvasWithOriginalImg ()
 {
     ctx.clearRect(0, 0, c.width, c.height);
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(img, xImg, yImg);
     console.log("Cleared img");
 }
 
@@ -67,4 +67,10 @@ function showEffects ()
                 break;
         }
     }
+}
+
+function clearPile()
+{
+    effectsPile = [];
+    showEffects();
 }

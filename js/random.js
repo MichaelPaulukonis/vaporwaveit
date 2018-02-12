@@ -1,5 +1,5 @@
 function random (opacity) {
-    var imgData = ctx.getImageData(0, 0, img.width, img.height);
+    var imgData = ctx.getImageData(xImg, yImg, wImg, hImg);
     var pixels = imgData.data;
 
     for (var i = 0; i < pixels.length; i += 4) {
@@ -9,5 +9,5 @@ function random (opacity) {
         pixels[i+3] = 255;
     }
 
-    ctx.putImageData(imgData, 0, 0);
+    ctx.putImageData(imgData, xImg, yImg);
 }

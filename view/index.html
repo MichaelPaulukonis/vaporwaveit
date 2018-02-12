@@ -6,13 +6,14 @@
         <link rel="stylesheet" href="view.css" type="text/css">
     </head>
     <body>
-        <h1>Vaporwave It</h1>
 
-        <div style="float: left;">
-            Choose your image : <input id="file" type="file"><br>
+        <div id="preview">
+            <h1>Vaporwave It</h1>
+            <div id="fileBtn"><input id="file" type="file"></div>
             <canvas id="myCanvas" width="800" height="600"></canvas><br>
             <button id="grayscaleBtn">Grayscale</button>
             <button id="randomBtn">Random</button>
+            <button id="clearBtn">Clear</button>
         </div>
 
         <ul id="effectsList">
@@ -27,6 +28,9 @@
         <script>
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
+
+            var fileBtn = document.getElementById("fileBtn");
+
             var img = loadFile();
             var effectsList = document.getElementById("effectsList");
 
@@ -35,6 +39,9 @@
 
             var randomBtn = document.getElementById("randomBtn");
             randomBtn.onclick = function () { addRandomEffect(0.3); showEffects(); applyEffects(); };
+
+            var clearBtn = document.getElementById("clearBtn");
+            clearBtn.onclick = function () { clear(); };
         </script>
 
 
