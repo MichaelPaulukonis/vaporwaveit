@@ -27,6 +27,11 @@ body
     padding: 10px;
 }
 
+.deleteBtn
+{
+    float: right;
+}
+
 #preview
 {
     position: absolute;
@@ -40,4 +45,11 @@ body
     text-align: center;
 
     background-color: #393939;
+}
+
+#fileBtn
+{
+    position: absolute;
+    top: 49%;
+    left: 40%;
 }
