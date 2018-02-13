@@ -56,21 +56,47 @@ function showEffects ()
     for (var i = 0; i < effectsPile.length; i++) {
         var effect = effectsPile[i];
 
+        var upBtnHtml = "";
+        var downBtnHtml = "";
+
+        if (i != 0)
+            upBtnHtml = "<button class='effectBtn upBtn' onclick='swapEffects(" + i + "," + (i-1) + ")'>^</button>";
+        else
+            upBtnHtml = "<button class='effectBtn upBtn' disabled>^</button>";
+
+        if (i != effectsPile.length - 1)
+            downBtnHtml = "<button class='effectBtn upBtn' onclick='swapEffects(" + i + "," + (i+1) + ")'>v</button>";
+        else
+            downBtnHtml = "<button class='effectBtn upBtn' disabled>v</button>";
+
+        var modifyBtnHtml = "<button class='effectBtn modifyBtn' onclick='//modifyEffect(" + i + ")'>O</button>";
+        var deleteBtnHtml = "<button class='effectBtn deleteBtn' onclick='deleteEffect(" + i + ")'>X</button>";
+
         switch (effect.type) {
             case "grayscale":
-                effectsList.innerHTML += "<li>Grayscale ; " + effect.rShift + " ; " + effect.gShift + " ; " + effect.bShift + "<button class='deleteBtn' onclick='deleteEffect(" + i + ")'>X</button></li>";
+                effectsList.innerHTML += "<li>Grayscale ; " + effect.rShift + " ; " + effect.gShift + " ; " + effect.bShift + deleteBtnHtml + modifyBtnHtml + downBtnHtml + upBtnHtml + "</li>";
                 break;
 
             case "random":
-                effectsList.innerHTML += "<li>Random ; " + effect.opacity + "<button class='deleteBtn' onclick='deleteEffect(" + i + ")'>X</button></li>";
+                effectsList.innerHTML += "<li>Random ; " + effect.opacity + deleteBtnHtml + modifyBtnHtml + downBtnHtml + upBtnHtml + "</li>";
                 break;
         }
     }
 }
 
-function deleteEffect(numero)
+function deleteEffect(id)
 {
-    effectsPile.splice(numero, 1);
+    effectsPile.splice(id, 1);
+    applyEffects();
+    showEffects();
+}
+
+function swapEffects(firstId, secondId)
+{
+    var temp = effectsPile[firstId];
+    effectsPile[firstId] = effectsPile[secondId];
+    effectsPile[secondId] = temp;
+
     applyEffects();
     showEffects();
 }
