@@ -1,3 +1,6 @@
+/* grayscale.js
+Contains the grayscale algorithm */
+
 function grayscale (rShift, gShift, bShift) {
     var imgData = ctx.getImageData(xImg, yImg, wImg, hImg);
     var pixels = imgData.data;

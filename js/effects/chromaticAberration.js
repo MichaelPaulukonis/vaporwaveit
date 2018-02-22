@@ -1,3 +1,6 @@
+/* chromaticAberration.js
+Contains the chromatic aberration algorithm */
+
 function chromaticAberration () {
     var imgData = ctx.getImageData(xImg, yImg, wImg, hImg);
     var pixels = imgData.data;

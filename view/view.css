@@ -1,7 +1,10 @@
+/* view.css
+CSS for the main UI */
+
 @font-face
 {
     font-family: VHS;
-    src: url("../resources/vhs_font.ttf");
+    src: url("../resources/vhsFont.ttf");
 }
 
 body

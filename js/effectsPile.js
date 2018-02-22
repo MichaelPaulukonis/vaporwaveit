@@ -1,3 +1,6 @@
+/* effectsPile.js
+Manages the effects historic */
+
 var effectsPile = [];
 
 function addGrayscaleEffect(rShift, gShift, bShift)

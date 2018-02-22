@@ -1,4 +1,6 @@
-// Img Loading Script
+/* loadFile.js
+Manages the image loading and handling on the canvas*/
+
 var xImg;
 var yImg;
 var hImg;

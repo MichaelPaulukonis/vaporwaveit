@@ -1,3 +1,6 @@
+/* random.js
+Contains the noise effect algorithm */
+
 function random (opacity) {
     var imgData = ctx.getImageData(xImg, yImg, wImg, hImg);
     var pixels = imgData.data;
