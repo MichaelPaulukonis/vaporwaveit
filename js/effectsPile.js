@@ -20,6 +20,14 @@ function addRandomEffect(opacity)
     effectsPile.push(effect);
 }
 
+function addChromaticAberration()
+{
+    var effect = {
+        type: "chromaticAberration"
+    };
+    effectsPile.push(effect);
+}
+
 function resetCanvasWithOriginalImg ()
 {
     ctx.clearRect(0, 0, c.width, c.height);
@@ -42,6 +50,10 @@ function applyEffects ()
 
             case "random":
                 random(effect.opacity);
+                break;
+
+            case "chromaticAberration":
+                chromaticAberration();
                 break;
         }
     }
@@ -79,6 +91,10 @@ function showEffects ()
 
             case "random":
                 effectsList.innerHTML += "<li>Random ; " + effect.opacity + deleteBtnHtml + modifyBtnHtml + downBtnHtml + upBtnHtml + "</li>";
+                break;
+
+            case "chromaticAberration":
+                effectsList.innerHTML += "<li>Chromatic Aberration" + deleteBtnHtml + modifyBtnHtml + downBtnHtml + upBtnHtml + "</li>";
                 break;
         }
     }

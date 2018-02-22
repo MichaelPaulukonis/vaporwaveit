@@ -8,21 +8,27 @@
     <body>
 
         <div id="preview">
-            <h1>ｖａｐｏｒｗａｖｅ．ｉｔ　淫てサ</h1>
+            <h1>VAPORWAVE.IT</h1>
             <div id="fileBtn"><input id="file" type="file"></div>
             <canvas id="myCanvas" width="800" height="600"></canvas><br>
             <button id="grayscaleBtn">Grayscale</button>
             <button id="randomBtn">Random</button>
+            <button id="chromaticAberrationBtn">Chromatic Aberration</button>
             <button id="clearBtn">Clear</button>
         </div>
 
-        <ul id="effectsList">
+        <div id="effectsPanel">
+            <div id="effectsPanelTitle">Effects List</div>
+            <ul id="effectsList">
 
-        </ul>
+            </ul>
+        </div>
+
 
         <script src="../js/loadFile.js"></script>
-        <script src="../js/grayscale.js"></script>
-        <script src="../js/random.js"></script>
+        <script src="../js/effects/grayscale.js"></script>
+        <script src="../js/effects/random.js"></script>
+        <script src="../js/effects/chromaticAberration.js"></script>
         <script src="../js/effectsPile.js"></script>
 
         <script>
@@ -39,6 +45,9 @@
 
             var randomBtn = document.getElementById("randomBtn");
             randomBtn.onclick = function () { addRandomEffect(0.3); showEffects(); applyEffects(); };
+
+            var chromaticAberrationBtn = document.getElementById("chromaticAberrationBtn");
+            chromaticAberrationBtn.onclick = function () { addChromaticAberration(); showEffects(); applyEffects(); };
 
             var clearBtn = document.getElementById("clearBtn");
             clearBtn.onclick = function () { clear(); };
