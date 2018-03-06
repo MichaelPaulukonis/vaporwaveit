@@ -5,3 +5,6 @@ Here are the current effects available :
 
 - Greyscale
 - Noise (by pixel randomization)
+- Simple chromatic aberration
+
+![VaporwaveIt Example](resources/screenshotExample.png)
