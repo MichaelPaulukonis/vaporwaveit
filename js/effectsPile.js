@@ -34,7 +34,7 @@ function addChromaticAberration()
 function resetCanvasWithOriginalImg ()
 {
     ctx.clearRect(0, 0, c.width, c.height);
-    ctx.drawImage(img, xImg, yImg);
+    ctx.drawImage(img, 0, 0);
     console.log("Cleared img");
 }
 

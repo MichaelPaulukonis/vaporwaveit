@@ -1,11 +1,6 @@
 /* loadFile.js
 Manages the image loading and handling on the canvas*/
 
-var xImg;
-var yImg;
-var hImg;
-var wImg;
-
 function loadFile () {
     // Instantiate and draw img
     var imgLoaded = new Image();
@@ -36,17 +31,16 @@ function loadFile () {
 
 function firstDrawImg(img)
 {
-    xImg = (c.width - img.width) / 2;
-    yImg = (c.height - img.height) / 2;
-    hImg = img.height;
-    wImg = img.width;
-    ctx.drawImage(img, xImg, yImg);
+    c.width = img.width;
+    c.height = img.height;
+
+    ctx.drawImage(img, 0, 0);
 }
 
 function clear()
 {
     ctx.clearRect(0, 0, c.width, c.height);
     clearPile();
-    fileBtn.innerHTML="<input id=\"file\" type=\"file\">";
+    fileBtn.innerHTML="<input id=\"file\" type=\"file\"><label id=\"fileLabel\" for=\"file\">Upload file</label>";
     img = loadFile();
 }

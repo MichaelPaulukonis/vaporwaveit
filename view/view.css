@@ -101,4 +101,21 @@ button
     position: absolute;
     top: 49%;
     left: 40%;
+    color: white;
+}
+
+#file
+{
+    display: none;
+}
+
+#fileLabel
+{
+    text-transform: uppercase;
+    font-family: "VHS";
+    font-size: 1.3em;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 2px white;
+    color: white;
+    padding: 5px;
 }

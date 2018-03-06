@@ -2,7 +2,7 @@
 Contains the grayscale algorithm */
 
 function grayscale (rShift, gShift, bShift) {
-    var imgData = ctx.getImageData(xImg, yImg, wImg, hImg);
+    var imgData = ctx.getImageData(0, 0, c.width, c.height);
     var pixels = imgData.data;
 
     for (var i = 0; i < pixels.length; i += 4) {
@@ -12,7 +12,7 @@ function grayscale (rShift, gShift, bShift) {
         pixels[i+2] = grayscale;
     }
 
-    ctx.putImageData(imgData, xImg, yImg);
+    ctx.putImageData(imgData, 0, 0);
 }
 
 // Average Grayscale : 0.33 ; 0.33 ; 0.33

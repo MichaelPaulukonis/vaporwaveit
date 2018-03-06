@@ -2,7 +2,7 @@
 Contains the noise effect algorithm */
 
 function random (opacity) {
-    var imgData = ctx.getImageData(xImg, yImg, wImg, hImg);
+    var imgData = ctx.getImageData(0, 0, c.width, c.height);
     var pixels = imgData.data;
 
     for (var i = 0; i < pixels.length; i += 4) {
@@ -12,5 +12,5 @@ function random (opacity) {
         pixels[i+3] = 255;
     }
 
-    ctx.putImageData(imgData, xImg, yImg);
+    ctx.putImageData(imgData, 0, 0);
 }
